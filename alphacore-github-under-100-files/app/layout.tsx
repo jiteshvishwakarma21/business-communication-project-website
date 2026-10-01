@@ -1,0 +1,5 @@
+import type {Metadata} from 'next';
+import './globals.css';
+import Shell from '@/components/alphacore/Shell';
+export const metadata:Metadata={metadataBase:new URL('https://alphacore-concept.rosy-spark-5856.chatgpt.site'),title:{default:'Alphacore — Power. Beyond the keyboard.',template:'%s | Alphacore'},description:'Meet Alphacore—a dual-screen foldable laptop concept that opens into a seamless 180° display.',icons:{icon:'/favicon.svg'},openGraph:{title:'Alphacore — Power. Beyond the keyboard.',description:'A new perspective on powerful portable computing.',images:['/og.png']},twitter:{card:'summary_large_image',images:['/og.png']}};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><Shell>{children}</Shell><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'Alphacore',email:'ankitkulkarni@gmail.com',url:'https://alphacore-concept.rosy-spark-5856.chatgpt.site'})}}/></body></html>}

@@ -1,0 +1,3 @@
+export const vertexShader=`varying vec2 vUv; void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`;
+export const fragmentShader=`precision highp float; varying vec2 vUv; uniform float uTime; uniform float uPanel;
+void main(){vec2 uv=vec2(vUv.x,(vUv.y+uPanel)*.5);vec2 p=(uv-.5)*vec2(1.,1.23);float r=length(p);float a=atan(p.y,p.x);float w=.017*sin(a*5.+uTime*.4)+.012*cos(a*9.-uTime*.3);float ring=exp(-abs(r-.255-w)*140.);float ring2=exp(-abs(r-.29-w*.5)*220.);float halo=exp(-abs(r-.26)*18.);vec3 col=vec3(.008,.015,.025)+vec3(.12,.62,.85)*(ring*1.3+halo*.16)+vec3(.32,.23,.7)*ring2*.55;col+=vec3(.2,.6,.8)*exp(-r*13.)*.12;gl_FragColor=vec4(col,1.);}`;
